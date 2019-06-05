@@ -1,14 +1,14 @@
-function [q_dav,Q_dav] = qdaven(rN,rB,stddev)
+function [q_dav,Q_dav] = daven(rN,rB,stddev)
 % Davenport q-Algorithm for Static State Estimation
+%
 % Inputs:
-%      rN1 - First Inertial-Frame Reference Position Vector
-%      rN2 - Second Inertial-Frame Reference Position Vector
-%      rB1 - First Body-Frame Measured Position Vector
-%      rB2 - Second Body-Frame Measured Position Vector
+%       rN - 3xN Array of Inertial-Frame Position Vectors
+%       rB - 3xN Array of Body-Frame Measured Position Vectors
+%       stddev - Standard Deviation Error of Measurements
 %
 % Outputs:
-%   Q - 3x3 Rotation Matrix
-%   q - 4x1 Attitude Quaternion
+%       Q - 3x3 Rotation Matrix
+%       q - 4x1 Scalar-Last Quaternion
 
 % Generate Attitude Profile Matrix
 B = zeros(3);
@@ -24,4 +24,4 @@ K = [B + B' - trace(B)*eye(3) Z;Z' trace(B)];
 [~, idx] = max(diag(eigval));
 
 q_dav = eigvec(:,idx)/norm(eigvec(:,idx));
-Q_dav = quat2Q(q_dav);
+Q_dav = rotm2Q(q_dav);
