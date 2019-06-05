@@ -25,4 +25,4 @@ Tb = [tB1 tB2 cross(tB1,tB2)/norm(cross(tB1,tB2))];
 
 % Compute Q and q
 Q = Tn*Tb';
-q = rotm2quat(Q);
+q = rot2q(Q);
