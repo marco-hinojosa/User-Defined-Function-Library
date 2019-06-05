@@ -1,28 +1,28 @@
 function [q,Q] = triad(rN,rB)
-% TRIAD Algorithm for Static State Estimation
+% TRIAD Algorithm for Static Attitude Estimation
+% Note: The rotation is from the body-frame to the inertial frame.
+%
 % Inputs:
-%      rN1 - First Inertial-Frame Reference Position Vector
-%      rN2 - Second Inertial-Frame Reference Position Vector
-%      rB1 - First Body-Frame Measured Position Vector
-%      rB2 - Second Body-Frame Measured Position Vector
+%       rN - 3xN Array of Inertial-Frame Position Vectors
+%       rB - 3xN Array of Body-Frame Measured Position Vectors
+%       stddev - Standard Deviation Error of Measurements
 %
 % Outputs:
-%   Q - 3x3 Rotation Matrix
-%   q - 4x1 Attitude Quaternion
+%       Q - 3x3 Rotation Matrix
+%       q - 4x1 Scalar-Last Quaternion
 
 rN1 = rN(:,1); rN2 = rN(:,2); 
 rB1 = rB(:,1); rB2 = rB(:,2); 
-tn1 = rN1;
-tn2 = cross(rN1,rN2)/norm(cross(rN1,rN2));
+tN1 = rN1;
+tN2 = cross(rN1,rN2)/norm(cross(rN1,rN2));
 
-Tn = [tn1 tn2 cross(tn1,tn2)/norm(cross(tn1,tn2))];
+Tn = [tN1 tN2 cross(tN1,tN2)/norm(cross(tN1,tN2))];
 
-tb1 = rB1;
-tb2 = cross(rB1,rB2)/norm(cross(rB1,rB2));
+tB1 = rB1;
+tB2 = cross(rB1,rB2)/norm(cross(rB1,rB2));
 
-Tb = [tb1 tb2 cross(tb1,tb2)/norm(cross(tb1,tb2))];
+Tb = [tB1 tB2 cross(tB1,tB2)/norm(cross(tB1,tB2))];
 
 % Compute Q and q
 Q = Tn*Tb';
-q = Q2quat(Q);
-end
+q = rotm2quat(Q);
