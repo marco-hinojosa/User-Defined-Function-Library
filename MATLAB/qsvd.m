@@ -20,7 +20,7 @@ end
 
 [U,S,V] = svd(B');
 Q_svd = U*diag([1,1,det(U)*det(V)])*V';
-q_svd = rotm2quat(Q_svd);
+q_svd = rot2q(Q_svd);
 
 % Generate Rotation Error
 % Q_error = Q_true'*Q_NB_SVD;
