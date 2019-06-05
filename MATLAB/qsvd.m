@@ -1,4 +1,4 @@
-function [q_svd,Q_svd] = Qsvd(rN,rB,stddev)
+function [q_svd,Q_svd] = qsvd(rN,rB,stddev)
 % SVD Algorithm for Static Attitude Estimation
 % Note: The rotation is from the body frame to the inertial frame.
 %
