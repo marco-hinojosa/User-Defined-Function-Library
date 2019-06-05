@@ -3,5 +3,5 @@ function phi = q2axis(q)
 % Input - q Quaternion Matrix 
 % Output - phi Axis Angle
 Q = q2rot(q);
-phi = unhat(logm(Q));
+phi = skew2vec(logm(Q));
 end
