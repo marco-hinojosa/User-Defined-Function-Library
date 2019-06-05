@@ -1,4 +1,4 @@
-function phi = quat2phi(q)
+function phi = q2axis(q)
 % Converts Rotation Matrix Q into Quaternion q
 % Input - q Quaternion Matrix 
 % Output - phi Axis Angle
