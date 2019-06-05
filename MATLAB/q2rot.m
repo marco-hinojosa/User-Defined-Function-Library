@@ -1,4 +1,4 @@
-function Q = quat2rot(q)
+function Q = q2rot(q)
 v = q(1:3);
 s = q(4);
 
