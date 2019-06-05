@@ -1,4 +1,4 @@
-function [r_eci, v_eci] = OE2ECI(a, e, i, RAAN, w, anom, mu)
+function [r_eci, v_eci] = oe2eci(a, e, i, RAAN, w, anom, mu)
 % OE2ECI Converts orbital elements to r, v in inertial frame
 %
 %   Notes: 
