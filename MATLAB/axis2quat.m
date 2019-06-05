@@ -1,4 +1,4 @@
-function q = phi2quat(phi)
+function q = phi2q(phi)
 % Converts Axis-Angle Vector phi into Quaternion q
 % Input - phi Axis Angle 
 % Output - q Quaternion Matrix
