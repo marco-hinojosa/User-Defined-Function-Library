@@ -25,4 +25,4 @@ K = [B + B' - trace(B)*eye(3) Z;Z' trace(B)];
 [~, idx] = max(diag(eigval));
 
 q_dav = eigvec(:,idx)/norm(eigvec(:,idx));
-Q_dav = rotm2Q(q_dav);
+Q_dav = q2rot(q_dav);
