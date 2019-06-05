@@ -2,7 +2,7 @@ function [q] = axis2q(phi)
 % Converts Axis-Angle Vector into Quaternion
 %
 % Inputs:
-%       phi - 3x1 Axis-Angle Vector
+%       phi - 3x1 Axis-Angle Vector [rad]
 %
 % Outputs:
 %       q - 4x1 Scalar-Last Quaternion
