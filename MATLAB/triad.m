@@ -1,6 +1,6 @@
 function [q,Q] = triad(rN,rB)
 % TRIAD Algorithm for Static Attitude Estimation
-% Note: The rotation is from the body-frame to the inertial frame.
+% Note: The rotation is from the body frame to the inertial frame.
 %
 % Inputs:
 %       rN - 3xN Array of Inertial-Frame Position Vectors
