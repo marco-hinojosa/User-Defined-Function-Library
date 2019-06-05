@@ -1,4 +1,4 @@
-function q = rot2quat(Q)
+function q = rot2q(Q)
 % Converts Rotation Matrix Q into Quaternion q
 % Input - Q Rotation Matrix 
 % Output - q Quaternion
