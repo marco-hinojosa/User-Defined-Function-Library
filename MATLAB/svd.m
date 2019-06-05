@@ -1,5 +1,6 @@
 function [q_svd,Q_svd] = svd(rN,rB,stddev)
-% SVD Algorithm for Static State Estimation
+% SVD Algorithm for Static Attitude Estimation
+% Note: The rotation is from the body-frame to the inertial frame.
 %
 % Inputs:
 %       rN - 3xN Array of Inertial-Frame Position Vectors
