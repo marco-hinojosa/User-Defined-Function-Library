@@ -1,5 +1,6 @@
 function [q_dav,Q_dav] = daven(rN,rB,stddev)
-% Davenport q-Algorithm for Static State Estimation
+% Davenport q-Algorithm for Static Attitude Estimation
+% Note: The rotation is from the body-frame to the inertial frame.
 %
 % Inputs:
 %       rN - 3xN Array of Inertial-Frame Position Vectors
