@@ -1,5 +1,5 @@
 function phi = q2axis(q)
-% Converts Quaternion q into Axis-Angle Vector phi
+% Converts Quaternion into Axis-Angle Vector
 %
 % Inputs:
 %       q - 4x1 Scalar-Last Quaternion
