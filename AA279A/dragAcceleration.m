@@ -7,14 +7,14 @@ function f_D = dragAcceleration (rIJK, vIJK, constants)
 %   rIJK - ECI position vector of satellite [km]
 %   vIJK - ECI velocity vector of satellite [km/s]
 %   constants - Cell array of necessary constants :
-%       {1} = radius of Earth [km]
-%       {2} = rotation rate of Earth [ rad /s]
-%       {3} = mass of satellite [kg]
-%       {4} = drag coefficient of satellite
-%       {5} = cross - sectional area of satellite [m ^2]
-%       {6} = reference altitude [km]
-%       {7} = reference density [kg/m ^3]
-%       {8} = characteristic altitude [km]
+%       {1} = Re - radius of Earth [km]
+%       {2} = wE - rotation rate of Earth [ rad /s]
+%       {3} = M - mass of satellite [kg]
+%       {4} = CD - drag coefficient of satellite
+%       {5} = A - cross-sectional area of satellite [m ^2]
+%       {6} = h0 - reference altitude [km]
+%       {7} = rho0 - reference density [kg/m ^3]
+%       {8} = H - characteristic altitude [km]
 %
 % Outputs :
 %   f_d - Acc. due to drag in ECI frame [km/s^2]
@@ -33,7 +33,7 @@ h0 = constants {6};
 rho0 = constants {7};
 H = constants {8};
 
-% Compute the satellite 's ballistic coefficient
+% Compute the satellite's ballistic coefficient
 B = CD*A/M;
 
 % Estimate the density at the local altitude
