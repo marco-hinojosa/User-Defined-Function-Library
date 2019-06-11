@@ -1,5 +1,5 @@
 function E = M2E(M, e, tol)
-% M2E solves Kepler 's equation for eccentric anomaly
+% M2E solves Kepler's equation for eccentric anomaly
 %
 % Note: This function uses a Newton - Raphson method to numerically 
 %       compute the correct value for E
