@@ -5,6 +5,7 @@ function mjd = cal2mjd(M, D, Y, H)
 %       M - Calendar Month
 %       D - Calendar Day
 %       Y - Calendar Year
+%       H - Hour of Day
 %
 % Outputs:
 %       mjd - Modified Julian Date [d]
